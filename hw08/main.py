@@ -12,7 +12,6 @@ contacts = []
 def open_contact():
     with open('phone.txt', 'r') as file:
         contacts = file.readlines()
-        print(contacts)
         return contacts
 def save_contact(contacts):
     data = open('phone.txt', 'w')
@@ -35,9 +34,9 @@ def rewrite_contact(contacts):
     contacts[string_number-1] = input('Введите новую информацию ') + '\n'
     return contacts
 def find_contact(contacts):
-    find = input('Введите фамилию, имя или номер')
+    find = input('Введите фамилию, имя или номер \n')
     for i in range(len(contacts)):
-        contact = contacts.split()
+        contact = contacts[i].split()
         if find in contact:
             print(i, contacts[i])
 
